@@ -8,8 +8,10 @@
 import UIKit
 
 class MainViewController: UICollectionViewController, UISearchBarDelegate{
-    
+
+//Cell ID
     private let cellId = "SearchCellID"
+
     private let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
@@ -20,7 +22,7 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
         setupSearchBar()
         
     }
-    
+//Initalize Searh Bar
     let citySearchBar = UISearchBar()
     
     private func setupSearchBar() {
@@ -33,26 +35,24 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
         textFieldInsideSearchBar?.placeholder = "Position"
         
         searchController.view.addSubview(citySearchBar)
-        citySearchBar.frame = CGRect(x: 10, y: searchController.searchBar.frame.height + 50, width: view.frame.size.width - 30, height: 50)
+        
         citySearchBar.placeholder = "Location"
+// Search Bar constrains
+        citySearchBar.frame = CGRect(x: 10, y: searchController.searchBar.frame.height + 50, width: view.frame.size.width - 30, height: 50)
         citySearchBar.layer.cornerRadius = 12
+        
+// MARK: Delegate
         citySearchBar.delegate = self
         
         
     }
     
+// MARK: Cell
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         return 20
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 10.0, left: 1.0, bottom: 10, right: 1.0)
-        
-    }
-    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
@@ -67,10 +67,18 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
         return .init(width: view.frame.width - 20, height: 180)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 10.0, left: 1.0, bottom: 10, right: 1.0)
+        
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsController = JobDetailsViewController()
         navigationController?.pushViewController(detailsController, animated: true)
     }
+    
+// Initializer
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())

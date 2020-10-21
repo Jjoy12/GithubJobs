@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchViewCell: UICollectionViewCell {
-    
+//Image View
     let logoImageView: UIImageView = {
        let iv = UIImageView()
         iv.image = UIImage(named: "Image")
@@ -17,7 +17,8 @@ class SearchViewCell: UICollectionViewCell {
         iv.layer.cornerRadius = 12
         return iv
     }()
-    
+// Label closures
+
     let companyLabel: UILabel = {
        let label = UILabel()
         label.text = "Awesome Company"
@@ -62,9 +63,11 @@ class SearchViewCell: UICollectionViewCell {
         backgroundColor = .gray
         addSubview(logoImageView)
         logoImageView.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 10, bottom: 0, right: 10), size: .init(width: 80, height: 100))
-        
+//Declare Stack View
         let stackView = UIStackView(arrangedSubviews: [companyLabel,titleLabel,typeLabel,locationLabel])
+// Add subView
         addSubview(stackView)
+// Stack view contraints
         stackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: logoImageView.leadingAnchor, padding: .init(top: 10, left: 20, bottom: 0, right: 20))
         stackView.axis = .vertical
         stackView.spacing = 10
