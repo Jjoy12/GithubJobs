@@ -39,7 +39,7 @@ class SearchViewCell: UICollectionViewCell {
     
     let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Seattle, WA"
+        label.text = "Malvern, PA"
         label.font = .systemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textColor = .label
@@ -49,7 +49,7 @@ class SearchViewCell: UICollectionViewCell {
     
     let typeLabel: UILabel = {
         let label = UILabel()
-        label.text = "iOS Engineer"
+        label.text = "Entry-level"
         label.font = .systemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textColor = .label
