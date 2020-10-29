@@ -48,12 +48,12 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
     }
     
 // MARK: Cell
-    
+// number of cells
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         return 20
     }
-    
+// Cell for item at
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchViewCell
@@ -62,6 +62,8 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
         return cell
         
     }
+    
+// MARK: Size of cell
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 20, height: 180)
@@ -72,7 +74,7 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
         return UIEdgeInsets(top: 10.0, left: 1.0, bottom: 10, right: 1.0)
         
     }
-    
+//Did select
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsController = JobDetailsViewController()
         navigationController?.pushViewController(detailsController, animated: true)
@@ -91,6 +93,7 @@ class MainViewController: UICollectionViewController, UISearchBarDelegate{
     
 }
 
+//Delegate
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
 }
