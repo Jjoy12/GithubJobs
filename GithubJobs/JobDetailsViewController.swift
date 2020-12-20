@@ -100,15 +100,15 @@ class JobDetailsViewController: UIViewController {
     }
     
 // Convert html
-    func convertHtml(text: String, attributedText: inout NSAttributedString) -> NSAttributedString {
+   func convertHtml(text: String, attributedText: inout NSAttributedString) -> NSAttributedString {
         let data = Data(text.utf8)
-        let options = [NSAttributedString.DocumentReadingOptionKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .charecterEncoding: String.Encoding.utf8.rawValue]
-        
-        if let attributedString = try? NSMutableAttributedString(data: data, options: options, nil) {
-            attributedText = attributedString
-            return attributedText
+      //  let options = [NSAttributedString.DocumentReadingOptionKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue]
+    
+//        if let attributedString = try? NSMutableAttributedString(data: data, options: options, nil) {
+  //          attributedText = attributedString
+          return attributedText
             
-        }
+  //      }
     }
     
     var htmlText = """
